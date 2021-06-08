@@ -1,11 +1,11 @@
-function ScanPosts()
+function ScanBanners()
 {
-    const findings = $('div>div>div>div>div>div>span>span:contains("promoted")');
+    const findings = $('div>div>div>div>div>span>span:contains("promoted")');
     
     if (findings.length > 0)
     {
         shitAd = findings.first();
-        for (let i = 0; i < 7; i++)
+        for (let i = 0; i < 6; i++)
         {
             // Check if we are at docroot -> no ad
             if (shitAd.is(shitAd.parent()))
@@ -38,10 +38,10 @@ function ScanPosts()
 
         // Fetch the ads title for console output
         const shitAdTitle = shitAd.find("h3").html();
-        console.log("Removed shit ad post: " + shitAdTitle);
+        console.log("Removed shit ad banner: " + shitAdTitle);
         
         // Remove that pest
         shitAd.remove();
     }
 }
-setInterval(ScanPosts, 1);
+setInterval(ScanBanners, 1);
