@@ -12,7 +12,10 @@
       "matches": [
         "https://www.reddit.com/*"
       ],
-      "js": ["jquery-3.5.1.min.js", "run.js"]
+      "js": [
+        "jquery-3.5.1.min.js",
+        "scan_sponsor_posts.js"
+      ]
     }
   ]
 }

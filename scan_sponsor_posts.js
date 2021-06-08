@@ -1,6 +1,6 @@
 function Scan()
 {
-    const findings = $('span:contains("promoted")');
+    const findings = $('div>div>div>div>div>div>span>span:contains("promoted")');
     
     if (findings.length > 0)
     {
@@ -12,6 +12,9 @@ function Scan()
                 // We are at the docroot. This is not an ad.
                 return;
             
+            // Go one parent-level up
+            shitAd = shitAd.parent();
+
             // Does the type match the ad-post template?
             if (i == 0)
             {
@@ -26,9 +29,6 @@ function Scan()
                 // not an ad
                 return;
             }
-
-            // Go one parent-level up
-            shitAd = shitAd.parent();
         }
 
         // The top div of the ad template should not have any classes
